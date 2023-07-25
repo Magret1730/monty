@@ -42,6 +42,8 @@ int read_and_process_file(FILE *file)
 		}
 		else if (strcmp(opcode, "pall") == 0)
 			pall(&stack);
+		else if (strcmp(opcode, "pint") == 0)
+			pint(&stack, line_number);
 		else
 		{
 			fprintf(stderr, "L%u: unknown instruction %s\n", line_number, opcode);
