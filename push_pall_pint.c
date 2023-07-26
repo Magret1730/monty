@@ -25,16 +25,19 @@ void pint(stack_t **stack, unsigned int line_number)
 void push(stack_t **stack, int value_to_push)
 {
 	/* Check if the value already exists in the stack */
-	stack_t *current = *stack, *new_node;
+	stack_t *new_node;  /* *current = *stack,*/
 
-	while (current)
+	/*
+	 * while (current)
 	{
 		if (current->n == value_to_push)
-			/* Value already exists, free the new_node and return */
 			return;
 		current = current->next;
 	}
+	*/
 	/*Assuming the integer to push is given as a global variable `value_to_push`*/
+	if ((*stack) == NULL)
+		return;
 	new_node = malloc(sizeof(stack_t));
 	if (!new_node)
 	{

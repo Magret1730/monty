@@ -109,7 +109,31 @@ void pchar(stack_t **stack, unsigned int line_number)
 	if ((current->n) < 0 || (current->n) > 127)
 	{
 		fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
-		exit(EXIT_FAILURE);	
+		exit(EXIT_FAILURE);
 	}
 	printf("%c\n", (char)(current->n));
+}
+
+/**
+ * pstr - prints the string starting at the top of the stack
+ * @stack: Pointer to the top of the stack
+ * @line_number: file wherethe push opcode isexecuted
+ */
+void pstr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *current = *stack;
+
+	(void)line_number;
+
+	if ((*stack) == NULL)
+		printf("\n");
+	if ((*stack) != NULL)
+	{
+		while (current->n != 0 && current->n >= 1 && current->n <= 127)
+		{
+			printf("%c", (char)(current->n));
+			current = current->next;
+		}
+		printf("\n");
+	}
 }
