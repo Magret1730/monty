@@ -26,3 +26,25 @@ void division(stack_t **stack, unsigned int line_number)
 	(*stack)->prev = NULL;
 	free(temp);
 }
+
+/**
+ * mul - function that performs a multiplication operation
+ * on the top two elements of a stack.
+ * @stack: Pointer to the top of the stack
+ * @line_number: argv[1]
+ *
+ */
+void mul(stack_t **stack, unsigned int line_number)
+{
+	int multiplied_outcome;
+
+	if (!*stack || !(*stack)->next)
+	{
+		fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	multiplied_result = (*stack)->n * (*stack)->next->n;
+	pop(stack, line_number);
+	(*stack)->n = multiplied_result;
+}
