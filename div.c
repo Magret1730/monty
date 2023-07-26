@@ -9,6 +9,7 @@
 void division(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp = *stack;
+	int divisor, dividend;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
@@ -19,6 +20,20 @@ void division(stack_t **stack, unsigned int line_number)
 	{
 		fprintf(stderr, "L%u: division by zero\n", line_number);
 		exit(EXIT_FAILURE);
+	}
+	divisor = (*stack)->n;
+	ividend = (*stack)->next->n;
+	if (divisor < 0)
+	{
+		divisor = -divisor;
+		if (dividend >= 0)
+			dividend = -dividend;
+	}
+	else if (dividend < 0)
+	{
+		dividend = -dividend;
+		if (divisor >= 0)
+			divisor = -divisor;
 	}
 	temp = *stack;
 	(*stack)->next->n /= (*stack)->n;
