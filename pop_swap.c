@@ -59,3 +59,14 @@ void add(stack_t **stack, unsigned int line_number)
 	(*stack)->prev = NULL;
 	free(temp);
 }
+
+/**
+ * nop - function that takes the two top stack elements and discard them.
+ * @stack: pointer to the stack
+ * @line_number: argument vector
+ */
+void nop(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+}
