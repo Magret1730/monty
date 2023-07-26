@@ -22,7 +22,7 @@ void division(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	divisor = (*stack)->n;
-	ividend = (*stack)->next->n;
+	dividend = (*stack)->next->n;
 	if (divisor < 0)
 	{
 		divisor = -divisor;
@@ -51,7 +51,7 @@ void division(stack_t **stack, unsigned int line_number)
  */
 void mul(stack_t **stack, unsigned int line_number)
 {
-	int multiplied_outcome;
+	int multiplied_result;
 
 	if (!*stack || !(*stack)->next)
 	{
