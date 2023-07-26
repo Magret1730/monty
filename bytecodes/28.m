@@ -1,2 +1,2 @@
-push 720
+push 72
 pchar
