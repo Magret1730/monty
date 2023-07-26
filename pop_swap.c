@@ -60,17 +60,7 @@ void add(stack_t **stack, unsigned int line_number)
 }
 
 /**
-* nop - function that takes the two top stack elements and discard them.
- * @stack: pointer to the stack
- * @line_number: argument vector
- */
-void nop(stack_t **stack, unsigned int line_number)
-{
-	(void)stack;
-	(void)line_number;
-}
-/**
- * * sub -  subtracts the top element of the stack
+ * sub -  subtracts the top element of the stack
  * from the second top element of the stack
  * @stack: Pointer to the top of the stack
  * @line_number: argv[1]
@@ -89,4 +79,17 @@ void sub(stack_t **stack, unsigned int line_number)
 	*stack = (*stack)->next;
 	(*stack)->prev = NULL;
 	free(temp);
+}
+
+/**
+ * nop - function that takes the two top stack elements and discard them.
+ * @stack: pointer to the stack
+ * @line_number: argument vector
+ *
+ * Description: This function takes the two top stack element and discard them
+ */
+void nop(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
 }
