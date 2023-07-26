@@ -81,11 +81,12 @@ void sub(stack_t **stack, unsigned int line_number)
 	free(temp);
 }
 
-
 /**
  * nop - function that takes the two top stack elements and discard them.
  * @stack: pointer to the stack
  * @line_number: argument vector
+ *
+ * Description: This function takes the two top stack element and discard them
  */
 void nop(stack_t **stack, unsigned int line_number)
 {
