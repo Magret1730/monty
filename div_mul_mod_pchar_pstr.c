@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * division -  subtracts the top element of the stack
+ * _div -  subtracts the top element of the stack
  * from the second top element of the stack
  * @stack: Pointer to the top of the stack
  * @line_number: argv[1]
