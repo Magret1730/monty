@@ -6,7 +6,7 @@
  * @stack: Pointer to the top of the stack
  * @line_number: argv[1]
  */
-void division(stack_t **stack, unsigned int line_number)
+void _div(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
 	double divisor, dividend;

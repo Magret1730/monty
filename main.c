@@ -55,8 +55,8 @@ int read_and_process_file(FILE *file)
 			sub(&stack, line_number);
 		else if (strcmp(opcode, "nop") ==  0)
 			nop(&stack, line_number);
-		else if (strcmp(opcode, "division") == 0)
-			division(&stack, line_number);
+		else if (strcmp(opcode, "_div") == 0)
+			_div(&stack, line_number);
 		else if (strcmp(opcode, "mul") == 0)
 			mul(&stack, line_number);
 		else if (strcmp(opcode, "mod") == 0)
