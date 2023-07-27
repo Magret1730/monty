@@ -123,17 +123,17 @@ void pstr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *current = *stack;
 
-	(void)line_number;
-
-	if ((*stack) == NULL)
-		printf("\n");
-	if ((*stack) != NULL)
+	while (current && current->n != 0 && (current->n >= 1 && current->n <= 127))
 	{
-		while (current->n != 0 && current->n >= 1 && current->n <= 127)
-		{
-			printf("%c", (char)(current->n));
-			current = current->next;
-		}
-		printf("\n");
+		printf("%c", current->n);
+		current = current->next;
 	}
+	if (!current || current->n == 0)
+	{
+		printf("\n");
+		return;
+	}
+
+	fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
+	exit(EXIT_FAILURE);
 }
