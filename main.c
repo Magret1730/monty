@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
  * read_and_process_file - Reads the Monty Byte Code file line by line
  * and executes the corresponding opcodes.
@@ -11,7 +12,7 @@ int read_and_process_file(FILE *file)
 	unsigned int line_number = 0;
 	size_t len;
 	int value_to_push;
-	stack_t *stack = NULL, *current;
+	stack_t *current, *stack = NULL;
 
 	while (fgets(line, sizeof(line), file) != NULL)
 	{
