@@ -121,19 +121,18 @@ void pchar(stack_t **stack, unsigned int line_number)
  */
 void pstr(stack_t **stack, unsigned int line_number)
 {
-	stack_t *current = *stack;
+	stack_t *h;
+	(void)line_number;
 
-	while (current && current->n != 0 && (current->n >= 1 && current->n <= 127))
+	h = *stack;
+	while (h)
 	{
-		printf("%c", current->n);
-		current = current->next;
+		if (h->n > 127 || h->n <= 0)
+		{
+			break;
+		}
+		printf("%c", h->n);
+		h = h->next;
 	}
-	if (!current || current->n == 0)
-	{
-		printf("\n");
-		return;
-	}
-
-	fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
-	exit(EXIT_FAILURE);
+	printf("\n");
 }
